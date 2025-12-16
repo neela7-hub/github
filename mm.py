@@ -1,0 +1,33 @@
+import pandas as pd
+import csv
+data_frame=pd.read_csv("D:\AROMAL\operation.csv")
+print("____CSV Data _____")
+print(data_frame)
+print("____first 5 rows ___")
+print(data_frame.head())
+print("____last 5 rows ___")
+print(data_frame.tail())
+x=data_frame.isnull()
+print("is the file has null values:",x)
+y=data_frame.columns
+print("the columns present are",y)
+z=data_frame.info()
+print("information of the file",z)
+print("____statistical summary____")
+print(data_frame.describe())
+column_name=data_frame.columns[0]
+print("first column name:",column_name)
+print("summary(shape)of the file")
+print(data_frame.shape)
+print("range of a column")
+min_val=data_frame["range"].min()
+max_val=data_frame["range"].max()
+range_val=max_val-min_val
+print("min:",min_val,"max:",max_val)
+print("range:",range_val)
+print("sorting in asending order")
+df_sorted=data_frame.sort_values("range")
+print(df_sorted)
+print("sorting in decending order")
+df_sort=data_frame.sort_values("range",ascending="false")
+print(df_sort)
